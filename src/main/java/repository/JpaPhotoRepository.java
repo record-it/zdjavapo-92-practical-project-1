@@ -41,6 +41,7 @@ public class JpaPhotoRepository implements PhotoRepository{
                         .map(e -> Photo.builder()
                                 .id(e.getId())
                                 .title(e.getTitle())
+                                .url(e.getUrl())
                                 .albumId(e.getAlbumId())
                                 .thumbnailUrl(e.getThumbnailUrl())
                                 .build())
