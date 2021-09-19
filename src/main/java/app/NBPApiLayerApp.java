@@ -3,6 +3,7 @@ package app;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonStringFormatVisitor;
 import model.CurrencyRate;
 import repository.CurrencyRateRepository;
+import repository.JpaCurrencyRateRepository;
 import repository.NBPApiCurrencyRateRepository;
 import service.CurrencyRateService;
 import service.NBPCurrencyRateService;
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class NBPApiLayerApp {
-    public static CurrencyRateRepository rateRepository = new NBPApiCurrencyRateRepository();
+    public static CurrencyRateRepository rateRepository = new JpaCurrencyRateRepository();
     public static CurrencyRateService rateService = new NBPCurrencyRateService(rateRepository);
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
